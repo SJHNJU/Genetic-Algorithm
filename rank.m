@@ -12,9 +12,15 @@ global best_generation;
 global G;
 
 
+<<<<<<< HEAD
+% for i = 1:population_size
+%     fitness_sum(i) = 0;
+% end
+=======
 for i = 1:population_size
     fitness_sum(i) = 0;
 end
+>>>>>>> c9460b7a203120ee7eeda06dae3540203108a967
 
 
 temp_chromosome(chromosome_size) = 0;
@@ -43,6 +49,18 @@ for i = 1:population_size
     end    
 end
 
+<<<<<<< HEAD
+% %fitness_sum(i) 前i个个体的适应度之和
+% for i = 1:population_size
+%     if i == 1
+%         fitness_sum(i) = fitness_value(1);
+%     else
+%         fitness_sum(i) = fitness_sum(i-1) + fitness_value(i);
+%     end
+% end
+% 
+% fitness_average(G) = fitness_sum(population_size)/population_size;
+=======
 %fitness_sum(i) 前i个个体的适应度之和
 for i = 1:population_size
     if i == 1
@@ -53,6 +71,7 @@ for i = 1:population_size
 end
 
 fitness_average(G) = fitness_sum(population_size)/population_size;
+>>>>>>> c9460b7a203120ee7eeda06dae3540203108a967
 
 % 更新最大适应度和对应的迭代次数，保存最佳个体(最佳个体的适应度最小)
 if fitness_value(1) < best_fitness
