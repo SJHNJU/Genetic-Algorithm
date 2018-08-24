@@ -32,7 +32,7 @@ disp [jhS genetic algorithm]
 
 fitness_average = zeros(generation_size); % 将 generation_size*1 的零矩阵赋给 fitness_average
 fitness_value(population_size) = 0;
-best_fitness = 100;%这里预估函数可能值，是进入best_individual的判断
+best_fitness = 0;
 best_generation = 0;
 
 for i = 1:population_size
@@ -42,19 +42,19 @@ for i = 1:population_size
 end
 
 
-for G=1:generation_size  
-    if(abs(best_fitness)<0.0001)
-        break;
-    end
+for G=1:generation_size      
     fitness(population_size, chromosome_size,x1chromosome_size);              % 计算适应度 
     rank(population_size, chromosome_size);                 % 对个体按适应度大小进行排序
-    selection(population_size, chromosome_size);   % 选择操作
+    selection(population_size, chromosome_size);            % 选择操作
     crossover(population_size, chromosome_size, cross_rate);% 交叉操作
     mutation(population_size, chromosome_size, mutate_rate);% 变异操作
 
     G = G+1;
     fprintf('%d\n',G);
     fprintf('best result is %f\n',best_fitness);
+    if(abs(best_fitness)<0.0001)
+        break;
+    end
 end
 
 
